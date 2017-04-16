@@ -1,0 +1,206 @@
+
+
+<div class="top_menu">
+    <div class="opac"></div>
+        <div class="centerize">
+            <button class="mob_menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <ul class="top_menu_ul">
+                <span class="close_menu" hidden=""><i class="fa fa-times" aria-hidden="true"></i>
+                </span>
+                <li><a href="/">خانه</a></li>
+                <li><a href="/page/about-me">درباره من</a></li>
+                <li><a href="/post/1">سرآغاز</a></li>
+                <li><a href="/page/%D8%AA%D9%85%D8%A7%D8%B3-%D8%A8%D8%A7-%D9%85%D9%86">تماس با من</a></li>
+                <li><a href="/page/%D8%AA%D8%B3%D8%AA">تست</a></li>
+                <li><a href="http://%da%af%d9%81%d8%aa%da%af%d9%88">گفتگو</a></li>
+                <li><a href="/page/%DA%AF%D9%81%D8%AA%DA%AF%D9%88">گفتگو</a></li>
+            </ul>
+            <input value="" class="SearchBtn_main" type="submit">
+            <div class="search" style="display: none;">
+            <div class="searchbar">
+            <form id="srh-frm" action="javaScript:Search()">
+            <input value="جستجو" class="SearchBtn" type="submit">
+            <input name="q" class="SearchInput" onblur="if(this.value=='') this.value='جستجو ...', this.style.color = '#a3a3a3';" style="text-align:right; direction:rtl;" type="text" value="" id="SearchInput" autocomplete="off" onfocus="if(this.value=='جستجو....')this.value='',this.style.color = '#333';">
+            </form>
+            <script type="text/javascript">
+            function Search()
+            {
+            var query = $(".SearchInput").val();
+            var site_name = "http://templatetest.blog.ir/";
+            if(query=="جستجو...." || query==""){
+            window.location.href = "http://salam.ir/";
+            }else{
+            window.location.href = "http://salam.ir/results?q=site%3A"+site_name+"%20"+query;
+            }
+            }
+            </script>
+            </div>
+            </div>
+        </div>
+</div>
+
+
+
+<style type="text/css">
+
+img.name_of_god {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 32px;
+}
+.search {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 0 8px 2px grey;
+    z-index:90;
+    display: none;
+
+}
+.search .SearchBtn {
+    background: #42a139;
+    color: white;
+}
+
+.SearchBtn_main {
+    width: 30px;
+    height: 45px;
+    background-color: transparent !important;
+    border: 0 !important;
+    background-image: url(http://bayanbox.ir/download/1895388509395687799/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+
+
+.top_menu .centerize {
+    position: relative;
+}
+.top_menu {
+    width: 100%;
+    height: 45px;
+    background: #3b423a;
+    position: relative;
+}
+ul.top_menu_ul {
+    width: 100%;
+    direction: rtl;
+    padding: 0;
+	
+}
+
+
+
+ul.top_menu_ul li:hover {
+    background: #989898;
+}
+ul.top_menu_ul li {
+    display: inline-block;
+    color: white;
+    /* margin-left: 30px; */
+    line-height: 46px;
+    height: 45px;
+    padding: 0 15px;
+}
+ul.top_menu_ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+span.close_menu {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: white;
+    font-size: 22px;
+}
+
+@media (max-width:1000px){
+    .centerize{
+        padding:0 15px;
+    }
+
+    .mobile_active .close_menu{
+        display:block
+    }
+    .top_menu.mobile_active .opac {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        top: 0;
+        z-index: 99999;
+    }
+    ul.top_menu_ul li {
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+
+    ul.top_menu_ul {
+        position: fixed;
+        height: 100%;
+        width: 250px;
+        right: -260px;
+        transition: all 0.5s;
+        top: 0;
+        padding-top: 70px;
+        background: black;
+        z-index: 9999999999999999999999999999;
+    }   
+    .mobile_active ul.top_menu_ul { 
+        right:0 !important;
+        transition: all 0.5s;
+        
+    }
+    button.mob_menu {
+        display:block
+    }
+    
+    .SearchBtn_main {
+        left: 15px !important;
+    }
+    .search {
+        left: 15px !important;
+    }
+    
+}
+
+
+
+/* header css end */
+</style>
+
+<script type="text/javascript">
+        $( document ).ready(function() {
+
+            $(".mob_menu").click(function(event) {
+                $(".top_menu").toggleClass('mobile_active');
+            });
+            
+            $(".opac,.close_menu").click(function(event) {
+                $(".top_menu").toggleClass('mobile_active');
+            }); 
+            
+            
+            $(".SearchBtn_main").hover(function() {
+                    $(".search").slideToggle();
+                }, function() {
+                    //                  $(".search").slideToggle();
+            });
+        });
+
+
+</script>
+    
